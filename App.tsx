@@ -1,20 +1,28 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import styled from 'styled-components/native'
+import { NativeRouter } from 'react-router-native'
+
+import Routing from './src/Routes'
+
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NativeRouter>
+      
+         <SafeAreaView>
+            <StatusBar style="auto"/>
+            <Routing />
+        </SafeAreaView>
+      
+    </NativeRouter>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const SafeAreaView = styled.SafeAreaView`
+  flex: 1;
+  align-items: stretch;
+  justify-content: flex-start;
+  flex-direction: column;
+  background-color: pink;
+`
