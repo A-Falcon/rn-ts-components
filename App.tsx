@@ -9,7 +9,6 @@ import Routing from './src/Routes'
 export default function App() {
   return (
     <NativeRouter>
-      
          <SafeAreaView>
             <StatusBar style="auto"/>
             <Routing />

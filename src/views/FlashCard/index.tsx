@@ -3,30 +3,65 @@ import styled from 'styled-components/native'
 import { useNavigate } from 'react-router-native'
 import {Text, View} from 'react-native'
 
-// import Card from '../../components/FlashCard/Card'
+import Card from '../../components/FlashCard'
 
 const FlashCard: React.FC = () => {
   const navigate = useNavigate()
   return (
     <Wrapper>
-      <Button onPress={() => navigate("/")}>
-      
-        <Text>Home</Text>
-      </Button>
-       {/* <Card /> */}
-       <View>
-         <Text>flash card component</Text>
-       </View>
+      <Header>
+        <Button onPress={() => navigate("/")}>
+          <ButtonText>Home</ButtonText>
+        </Button>
+        <Title>flash card component</Title>
+      </Header>
+       <Container> 
+          <Card />
+       </Container>
     </Wrapper>
   )
 }
 
 const Wrapper = styled.View`
-background-color: blue;
-height: 100%;
-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: blue;
+  height: 100%;
+  width: 100%;
+
+`
+const Header = styled.View`
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  margin-top:25px;
+  align-self: flex-start;
+  background-color: green;
+  
 `
 const Button = styled.TouchableOpacity`
-  padding: 20px;
+ 
+`
+
+const ButtonText = styled.Text`
+  flex: 1;
+  font-size: 20px;
+  color: white;
+`
+const Title = styled.Text`
+flex: 2;
+  font-size: 20px;
+  text-align: center;
+  /* margin-left: 20px; */
+`
+
+const Container = styled.View`
+  background-color: red;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
 `
 export default FlashCard
