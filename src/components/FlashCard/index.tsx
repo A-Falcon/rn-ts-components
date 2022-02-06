@@ -27,13 +27,13 @@ const Card: React.FC = () => {
   })
 
   const interpolateBack = animate.current.interpolate({
-    inputRange: [180, 360],
+    inputRange: [0, 180],
     outputRange: ['180deg', '360deg']
   })
   return (
     <Wrapper behavior='padding'>
         <View>
-          <Animated.View style={[{transform: [{rotateY: interpolateFront}]}, ]}>
+          <Animated.View style={[{transform: [{rotateY: interpolateFront}]}, styles.hidden]}>
             <FlipCard title="Front"/>
           </Animated.View>
           <Animated.View style={[{transform: [{rotateY: interpolateBack}]}, styles.back, styles.hidden]}>
