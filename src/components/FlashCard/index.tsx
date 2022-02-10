@@ -10,6 +10,12 @@ const Card: React.FC = () => {
 
   const animate = useRef(new Animated.Value(0))
   const [ isFlipped, setIsFlipped] = useState(false)
+  const [frontText, setFrontText] = useState('')
+  const [backText, setBackText] = useState('')
+  
+  const frontRef = useRef()
+  const backRef = useRef()
+
 
   const handleFlip = () => {
     Animated.timing(animate.current, {
@@ -17,6 +23,9 @@ const Card: React.FC = () => {
       toValue: isFlipped ? 0 : 180,
       useNativeDriver: true,
     }).start(() => {
+      //manage focus: this will allow us to type on both sides of the card
+      // @ts-ignore
+      isFlipped ? frontRef.current.focus() : backRef.current.focus()
       setIsFlipped(!isFlipped)
     })
   }
@@ -32,17 +41,17 @@ const Card: React.FC = () => {
   })
   return (
     <Wrapper behavior='padding'>
+      <Button onPress={handleFlip}>
         <View>
           <Animated.View style={[{transform: [{rotateY: interpolateFront}]}, styles.hidden]}>
-            <FlipCard title="Front"/>
+            <FlipCard title="Front" value={frontText} onChange={setFrontText} inputRef={frontRef} autoFocus={true}/>
           </Animated.View>
           <Animated.View style={[{transform: [{rotateY: interpolateBack}]}, styles.back, styles.hidden]}>
-            <FlipCard title="Back" />
+            <FlipCard title="Back" value={backText} onChange={setBackText} inputRef={backRef}/>
           </Animated.View>
-          <Button>
-            <ButtonText onPress={handleFlip}>Flip</ButtonText>
-          </Button>
+            {/* <ButtonText onPress={handleFlip}>Flip</ButtonText> */}
         </View>
+        </Button>
     </Wrapper>
   )
 }
@@ -66,7 +75,8 @@ const Wrapper = styled.KeyboardAvoidingView`
 
 const Button = styled.TouchableOpacity`
   align-self: center;
-  padding: 20px;
+  /* padding: 20px; */
+  background-color: blue;
 `
 const ButtonText = styled.Text`
   color: white;
