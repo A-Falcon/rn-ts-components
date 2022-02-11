@@ -76,7 +76,7 @@ const Wrapper = styled.KeyboardAvoidingView`
 const Button = styled.TouchableOpacity`
   align-self: center;
   /* padding: 20px; */
-  background-color: blue;
+  /* background-color: blue; */
 `
 const ButtonText = styled.Text`
   color: white;

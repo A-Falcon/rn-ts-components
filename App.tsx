@@ -23,5 +23,5 @@ const SafeAreaView = styled.SafeAreaView`
   align-items: stretch;
   justify-content: flex-start;
   flex-direction: column;
-  background-color: pink;
+  background-color: #723d46;
 `

@@ -14,8 +14,9 @@ type Props = {
 const FlipCard: React.FC<Props> = ({title, value, onChange, inputRef, autoFocus}) => {
   return (
     <Wrapper>
+       <Title>{title}</Title>
       <Content>
-        <Title>{title}</Title>
+       
         <TextInput 
         placeholder='Type something...' 
         value={value} 
@@ -29,24 +30,31 @@ const FlipCard: React.FC<Props> = ({title, value, onChange, inputRef, autoFocus}
 }
 
 const Wrapper = styled.View`
-  height: 350px;
-  width: 350px;
-  background-color: papayawhip;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 300px;
+  width: 300px;
+  background-color: #DDC0C5;
   border-radius: 10px;
 `
 const Content = styled.View`
 display: flex;
-flex-direction: column;
-justify-content: center;
 align-items: center;
+flex-direction: column;
+justify-content: flex-start;
+/* background-color: red; */
+height: 150px;
 `
 const Title = styled.Text`
-font-size: 40px;
-text-align: center;
-padding: 10px;
+font-size: 20px;
+align-self: flex-start;
+margin-left: 30px;
+
+
 `
 const TextInput = styled.TextInput`
-  background-color: green;
+  /* background-color: green; */
   width: 50%;
   height: 60px;
   border-bottom-color: black;
