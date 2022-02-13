@@ -11,8 +11,10 @@ import styled from 'styled-components/native'
     return (
       <Wrapper>
         <Button onPress={() => navigate("/flashcard")}>
-        
           <Text>FlashCard</Text>
+        </Button>
+        <Button onPress={() => navigate("/forminput")}>
+          <Text>FormInput</Text>
         </Button>
         
       </Wrapper>

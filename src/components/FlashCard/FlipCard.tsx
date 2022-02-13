@@ -20,6 +20,7 @@ const FlipCard: React.FC<Props> = ({title, value, onChange, inputRef, autoFocus}
         <TextInput 
         placeholder='Type something...' 
         value={value} 
+        //@ts-ignore
         onChange={(value: string) => onChange(value)} 
         ref={inputRef}
         autoFocus={autoFocus}
