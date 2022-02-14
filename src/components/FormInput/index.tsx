@@ -7,7 +7,7 @@ import Inputs from './Inputs'
 const Form: React.FC = () => {
   return (
     <Wrapper>
-      <Inputs />
+      <Inputs/>
     </Wrapper>
   )
 }
