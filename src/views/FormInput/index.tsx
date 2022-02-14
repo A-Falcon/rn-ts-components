@@ -1,7 +1,9 @@
 import React from 'react'
+import { TouchableWithoutFeedback , Keyboard} from 'react-native'
 import { useNavigate } from 'react-router'
 import styled from 'styled-components/native'
 
+import Form from '../../components/FormInput'
 
 const FormInput: React.FC = () => {
   const navigate = useNavigate()
@@ -13,9 +15,11 @@ const FormInput: React.FC = () => {
         </Button>
         <Title>FormInput Component</Title>
       </Header>
+      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <Container>
-
+        <Form/>
       </Container>
+      </TouchableWithoutFeedback>
     </Wrapper>
   )
 }
@@ -63,7 +67,7 @@ const Container = styled.View`
   width: 100%;
   align-items: center;
   justify-content: center;
-  background-color: red;
+  /* background-color: red; */
 `
 
 export default FormInput
