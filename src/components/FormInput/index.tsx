@@ -7,7 +7,8 @@ import Inputs from './Inputs'
 const Form: React.FC = () => {
   return (
     <Wrapper>
-      <Inputs />
+      {/* <Logo /> */}
+      <Inputs/>
     </Wrapper>
   )
 }
@@ -17,7 +18,7 @@ const Wrapper = styled.View`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color:red;
+  background-color:transparent;
   height: 100%;
   width:100%;
 `
