@@ -1,14 +1,46 @@
 import React from 'react'
 import styled from 'styled-components/native'
+import * as yup from 'yup'
+import { useFormik } from 'formik';
 
-import Inputs from './Inputs'
+// import Logo from './Logo'
+import TextInput from './TextInput'
+import SubmitButton from './SubmitButton'
 
+const userValidationSchema = yup.object({
+  name: yup.string().min(2).max(15).required(),
+  email: yup.string().email().required(),
+});
 
 const Form: React.FC = () => {
+  const formik = useFormik({
+    initialValues: {
+      name: '',
+      email: '',
+    },
+    validationSchema: userValidationSchema,
+    validateOnChange: false,
+    validateOnBlur: false,
+    onSubmit: values => {
+      console.log(values);
+    },
+  });
+ //  console.log('errors')
+ //  console.log(formik.errors)
   return (
     <Wrapper>
       {/* <Logo /> */}
-      <Inputs/>
+      <TextInput
+        label={'Name'}
+        formik={formik}
+        formikKey={'name'}
+      />      
+      <TextInput
+        label={'Email'}
+        formik={formik}
+        formikKey={'email'}
+      />
+      <SubmitButton formik={formik}/>
     </Wrapper>
   )
 }
@@ -18,7 +50,7 @@ const Wrapper = styled.View`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color:transparent;
+  background-color:#503336;
   height: 100%;
   width:100%;
 `
