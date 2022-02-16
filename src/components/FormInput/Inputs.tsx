@@ -16,6 +16,8 @@ const Inputs: React.FC= () => {
        email: '',
      },
      validationSchema: userValidationSchema,
+     validateOnChange: false,
+     validateOnBlur: false,
      onSubmit: values => {
        console.log(values);
      },
@@ -32,9 +34,9 @@ const Inputs: React.FC= () => {
            placeholderTextColor='#887B7E'
            placeholder='Name...'
          />
-         {formik.errors.name && 
+         {/* {formik.errors.name &&  */}
          <ErrText>{formik.errors.name}</ErrText>
-           }
+         {/* } */}
           <Input
            onChangeText={formik.handleChange('email')}
            onBlur={formik.handleBlur('email')}
@@ -42,9 +44,9 @@ const Inputs: React.FC= () => {
            placeholderTextColor='#887B7E'
            placeholder='Email...'
          />
-          {formik.errors.email && 
+          {/* {formik.errors.email &&  */}
          <ErrText>{formik.errors.email}</ErrText>
-           }
+          {/* } */}
          <Button onPress={() => formik.handleSubmit()} title="Submit" />
        </FormView>
     // {/* </Wrapper> */}
