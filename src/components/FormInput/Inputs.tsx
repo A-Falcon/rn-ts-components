@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react'
 import styled from 'styled-components/native'
-import {View, TextInput, Text, Button, StyleSheet} from 'react-native'
+import {View, TextInput, Text, Button, StyleSheet, TouchableOpacity} from 'react-native'
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 
@@ -47,7 +47,9 @@ const Inputs: React.FC= () => {
           {/* {formik.errors.email &&  */}
          <ErrText>{formik.errors.email}</ErrText>
           {/* } */}
-         <Button onPress={() => formik.handleSubmit()} title="Submit" />
+         <SubmitButton onPress={() => formik.handleSubmit()}>
+            <ButtonText>Submit</ButtonText>
+         </SubmitButton>
        </FormView>
     // {/* </Wrapper> */}
   )
@@ -66,33 +68,44 @@ const styles = StyleSheet.create({
 
 
 const FormView = styled.View`
-display:flex;
-align-items: center;
-justify-content:center;
-height: 600px;
-width: 325px;
-border-radius: 10px;
-background-color:#503336;
-padding: 20px;
-
+  display:flex;
+  align-items: center;
+  justify-content:center;
+  height: 600px;
+  width: 325px;
+  border-radius: 10px;
+  background-color:#503336;
+  padding: 20px;
 
 `
 const Input = styled.TextInput`
-text-align: left;
-padding-left: 20px;
-margin: 10px;
-height: 50px;
-width: 90%;
-font-size: 17px;
-background-color: #472d30;
-color: #DDC0C5;
-border-radius: 10px;
-border: none;
+  text-align: left;
+  padding-left: 20px;
+  margin: 10px;
+  height: 50px;
+  width: 90%;
+  font-size: 17px;
+  /* background-color: #472d30; */
+  color: #DDC0C5;
+  border-color: #887B7E;
+  border-bottom-width: 1px;
+
 `
 const ErrText = styled.Text`
   font-size: 14px;
   color: crimson;
+
 `
-
-
+const SubmitButton = styled.TouchableOpacity`
+  justify-content: center;
+  align-items: center;
+  height:50px;
+  background-color: #472d30;
+  width: 90%;
+  border-radius: 10px;
+`
+const ButtonText = styled.Text`
+  font-size: 17px;
+  color: #DDC0C5;
+`
   export default Inputs
