@@ -22,7 +22,7 @@ const TextInput: React.FC<TextInputProps>= ({ formik, formikKey}) => {
               value={formik.values[formikKey]}
               placeholderTextColor='#887B7E'
           />
-         <ErrText>{formik.errors.name}</ErrText>
+         <ErrText>{formik.errors[formikKey]}</ErrText>
        </FormView>
   )
 }
