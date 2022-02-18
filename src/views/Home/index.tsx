@@ -11,10 +11,10 @@ import styled from 'styled-components/native'
     return (
       <Wrapper>
         <Button onPress={() => navigate("/flashcard")}>
-          <Text>FlashCard</Text>
+          <ButtonText>FlashCard</ButtonText>
         </Button>
         <Button onPress={() => navigate("/forminput")}>
-          <Text>FormInput</Text>
+          <ButtonText>FormInput</ButtonText>
         </Button>
         
       </Wrapper>
@@ -28,6 +28,8 @@ const Button = styled.TouchableOpacity`
   background-color: transparent;
   padding: 20px;
 `
-
+const ButtonText = styled.Text`
+  color:${(props) => props.theme.colors.darkText};
+`
 
 export default Home

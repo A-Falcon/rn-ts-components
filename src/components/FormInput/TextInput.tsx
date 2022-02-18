@@ -34,7 +34,7 @@ const FormView = styled.View`
   justify-content:center;
   width:100%;
   border-radius: 10px;
-  background-color:#503336;
+  background-color: transparent;
   padding: 20px;
 
 `
@@ -42,7 +42,7 @@ const FormView = styled.View`
 const LabelText = styled.Text`
   align-self: flex-start;
   padding-left: 43px;
-  color: #887B7E;
+  color: ${(props) => props.theme.colors.lightText};
 `
 
 const Input = styled.TextInput`
@@ -51,14 +51,14 @@ const Input = styled.TextInput`
   height: 50px;
   width: 90%;
   font-size: 17px;
-  color: #DDC0C5;
-  border-color: #887B7E;
+  color: ${(props) => props.theme.colors.light};
+  border-color: ${(props) => props.theme.colors.lightText};
   border-bottom-width: 1px;
 
 `
 const ErrText = styled.Text`
   font-size: 14px;
-  color: crimson;
+  color: ${(props) => props.theme.colors.errText};
 
 `
 

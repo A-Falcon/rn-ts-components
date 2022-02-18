@@ -36,29 +36,26 @@ const Wrapper = styled.View`
   justify-content: space-around;
   height: 300px;
   width: 300px;
-  background-color: #DDC0C5;
+  background-color: ${(props) => props.theme.colors.light};
   border-radius: 10px;
 `
 const Content = styled.View`
-display: flex;
-align-items: center;
-flex-direction: column;
-justify-content: flex-start;
-/* background-color: red; */
-height: 150px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 150px;
 `
 const Title = styled.Text`
-font-size: 20px;
-align-self: flex-start;
-margin-left: 30px;
-
+  font-size: 20px;
+  align-self: flex-start;
+  margin-left: 30px;
 
 `
 const TextInput = styled.TextInput`
-  /* background-color: green; */
   width: 50%;
   height: 60px;
-  border-bottom-color: black;
+  border-bottom-color: ${(props) => props.theme.colors.darkText};
   border-bottom-width: 2px;
   
 `

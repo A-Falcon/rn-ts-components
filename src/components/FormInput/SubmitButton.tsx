@@ -29,13 +29,12 @@ const Button = styled.TouchableOpacity`
   justify-content: center;
   align-items: center;
   height:50px;
-  
-  background-color: #472d30;
+  background-color: ${(props) => props.theme.colors.darkest};
   width: 90%;
   border-radius: 20px;
 `
 const ButtonText = styled.Text`
   font-size: 17px;
-  color: #DDC0C5;
+  color: ${(props) => props.theme.colors.brightText};
 `
 export default SubmitButton

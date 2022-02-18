@@ -50,7 +50,7 @@ const Wrapper = styled.View`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color:#503336;
+  background-color:${(props) => props.theme.colors.dark};
   height: 100%;
   width:100%;
 `
