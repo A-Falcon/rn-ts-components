@@ -14,6 +14,7 @@ import Header from '../../components/Common/Header'
           <Header />
           <NavButton navigate = {() => navigate("/flashcard")} label={'FlashCard'} />
           <NavButton navigate = {() => navigate("/forminput")} label={'FormInput'} />
+          <NavButton navigate = {() => navigate("/switch")} label={'Switch'} />
       </Wrapper>
     )
 }

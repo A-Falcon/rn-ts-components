@@ -5,7 +5,6 @@ import { useNavigate, useLocation, Navigate } from 'react-router';
 import NavButton from './NavButton';
 
 interface NavButtonProps {
-  
   navigate?: () => void
 }
 
@@ -16,11 +15,13 @@ function getRouteName(path: string) {
     case '/flashcard':
       return 'FlashCard Component';
    case '/forminput':
-     return 'FormInput Component'
+     return 'FormInput Component';
+     case '/switch':
+       return 'Switch'
   }
 }
 
-const Header: React.FC<NavButtonProps> = ({navigate }) => {
+const Header: React.FC<NavButtonProps> = ({ navigate }) => {
   const location = useLocation();
   const currentRouteName = getRouteName(location.pathname)
 
