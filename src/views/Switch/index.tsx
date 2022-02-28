@@ -8,14 +8,22 @@ import Header from '../../components/Common/Header'
 const Switch:React.FC = () => {
   const navigate = useNavigate()
   return (
-    <Wrapper>
+    <>
       <Header navigate={() => navigate('/')} />
-    </Wrapper>
+      <Wrapper>
+
+      </Wrapper>
+    </>
   )
+   
 }
 
 const Wrapper = styled.View`
-
+  background-color: blue;
+  height: 40px;
+  width: 60px;
+  border-radius: 50%;
+  
 `
 
 export default Switch
