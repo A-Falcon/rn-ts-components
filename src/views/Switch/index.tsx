@@ -4,26 +4,30 @@ import { useNavigate } from 'react-router-native'
 import {Text, View, Keyboard, TouchableWithoutFeedback} from 'react-native'
 
 import Header from '../../components/Common/Header'
+import Switch from '../../components/Switch'
 
-const Switch:React.FC = () => {
+const SwitchView:React.FC = () => {
   const navigate = useNavigate()
   return (
     <>
       <Header navigate={() => navigate('/')} />
-      <Wrapper>
-
-      </Wrapper>
+      <Container>
+        <Switch />
+      </Container>
     </>
   )
    
 }
 
-const Wrapper = styled.View`
-  background-color: blue;
-  height: 40px;
-  width: 60px;
-  border-radius: 50%;
-  
+
+
+const Container = styled.View`
+  background-color: ${(props) => props.theme.colors.dark};
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
 `
 
-export default Switch
+
+export default SwitchView
